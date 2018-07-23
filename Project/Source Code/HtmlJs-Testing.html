@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Load Data</title>
+    <script type="text/javascript" src="LoadTxt.js"></script>
+	<meta charset="utf-8"/>
+	</head>
+
+<body>
+	<style>
+	html 
+	{
+		background-color: #191970; 
+	}
+	
+	body
+	{
+		margin-left: 20%;
+		margin-right: 20%;
+		background-color: white;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.Breakfast
+	{
+		
+	}
+	</style>
+	<script type="text/javascript">
+	  window.onload = function()
+	  {
+        
+	  }	
+	</script>
+
+	<form name = "order">
+	
+	<h1 style="font-family:verdana;">Breakfast</h1>
+	<div id="Breakfast">
+	
+	</div>
+	
+	<h1 style="font-family:verdana;">Lunch</h1>
+	<div id="Lunch">
+
+	</div>
+	
+	<h1 style="font-family:verdana;">Dinner</h1>
+	<div id="Dinner">
+		
+	</div>
+	
+	</form>
+	
+	<script type="text/javascript">
+	
+		readText("./Json/Cat.txt","./Json/Item.txt");
+		
+	</script>
+
+
+</body>
+</html>
