@@ -1,0 +1,169 @@
+div {
+    margin: 70px;
+}
+
+body {
+	background-color: #e8de96;
+	/*background: linear-gradient(#f7de85, #f2cb41);*/
+}
+
+h1 img{
+	height: 12.5%;
+	width: 12.5%;
+}
+h1{
+	color: red;
+	font-weight: bold;
+	font-family: "Papyrus", Times, serif;
+}
+
+.appHeading{
+	
+	margin-left: 7.5%;
+}
+
+.hoursofOperation{
+	float: right;
+	margin-right: 21%;
+	margin-top: 0%;
+}
+
+.appHeading, .hoursofOperation{
+	display: inline-block;
+}
+
+i, h1.about_us_text {
+	color: black;
+	font-weight: normal;
+	font-family: "Helvetica", Times, serif;
+	font-size: 15px;
+}
+
+
+#dininghall img{
+	margin-top: -10%;
+	height: 60%;
+	width: 35%;
+	position: absolute;
+	
+}
+
+#hours img{
+	margin-top:-10%;
+	height: 60%;
+	width: 30%;
+	position: absolute;
+	right: 7.5%;
+	float: right;
+
+}
+
+#dininghall img, #hours img{
+	display: inline-block;
+}
+
+.footer{
+	position: absolute;
+	left: 50%;
+	margin-top: 25%;
+	margin-left:-150px;
+	text-align: center;
+}
+
+.input-group, .input-group p{
+	margin: auto;
+}
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+	border: 1px solid grey;
+    outline: none;
+    cursor: pointer;
+	width: 25%;
+    padding: 15px 15px;
+    transition: 0.3s;
+    font-size: 20px;
+	font-family: "Helvetica", Times, serif;
+	
+}
+/* Change background color of buttons on hover */
+
+
+.tab button:hover {
+    background-color: #bf1f16;
+	color: white;
+	
+}
+
+/*
+.tab button:focus {
+    background-color: #bf1f16;
+	color: white;
+	
+}
+*/
+
+mark.warm{
+	color: #d19304;
+	background: none;
+}
+
+ /*Create an active/current tablink class*/
+.tab button.active {
+	color: white;
+    background-color: #bf1f16;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+.panel-title{
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	font-family: "Baskerville", Times, serif;
+	background-color: #bf1f16;
+	padding: 10px;
+	
+}
+
+.panel-body{
+	font-family: "Baskerville", Times, serif;
+	background: linear-gradient(#f4784b, #ed5923);
+	padding: 10px;
+}
+
+/*
+.panel-heading{
+    padding-bottom: -2px;
+	padding-top: -2px;
+	padding-left:-10px;
+	padding-right:-10px;
+	
+}
+
+*/
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
