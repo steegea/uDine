@@ -24,13 +24,41 @@
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
 
+<!---
+<title>Example of Bootstrap 3 Vertical Form Layout</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
 
+<div class="bs-example">
+    <form action="/examples/actions/confirmation.php" method="post">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+-->
+                         
 <div class="container">    
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" align="center">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
                         <div class="panel-title">Sign in to your uDine account</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-45px"><a href="#">Forgot password?</a></div>
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
@@ -38,24 +66,24 @@
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
                         <form id="loginform" class="form-horizontal" role="form">
-                            
-						
-													
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<p>Username</p>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
-                            </div>
-						
-                                
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<p>Password</p>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                    </div>
-                                    
-
-                                
+                          
+							<div></div>
+							
+							<div style="margin-bottom: 25px; margin-left: 30%;" class="input-group">
+								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								   <label for="inputEmail">Email:</label>
+								   <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+							   </div>
+						       
+							<center>
+								   <div style="margin-bottom: 25px; margin-left: 30%;" class="input-group">
+									   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									   <label for="inputPassword">Password:</label>
+									   <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+								   </div>
+							</center>						
+                          
+							<!--
                             <div class="input-group">
                                       <div class="checkbox">
                                         <label>
@@ -63,16 +91,16 @@
                                         </label>
                                       </div>
                             </div>
-
+							-->
 
                                 <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
-
-                                    <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+									
+									<div class="col-sm-12 controls">
+                                      <!---<button onclick="window.location.href='uDine Menu.html'"><!---<a id="btn-login" href="#" class="btn btn-success">Login</button>-->
                                       <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
-
                                     </div>
+									<button type ="submit" class="btn btn-success">Login</button>
                                 </div>
 
 
@@ -80,9 +108,9 @@
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                                             Don't have an account! 
-                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                            Sign-Up
-                                        </a>
+                                        <b><a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Sign-up
+                                        </a></b>
                                         </div>
                                     </div>
                                 </div>    
@@ -93,13 +121,109 @@
                         </div>                     
                     </div>  
         </div>
+		
+
+		
+
+<div class="container">
+	
+	<div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md- col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <center><div class="panel-title">Sign up for a uDine account</div></center>
+                            <div style="float:right; font-size: 85%; position: relative; top:-45px"><b><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></b></div>
+							
+                        </div>   
+
+                    <div style="padding-top:30px;" class="panel-body">
+
+                        <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form">
+                            
+								<div></div>
+								
+								<div style="margin-bottom: 25px; margin-left: 36.5%;" class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<label for="inputFirstName">First Name:</label>
+									<input type="text" name="firstname" pattern="[A-za-z]{1,50}" id = "inputFirstName" class="form-control" placeholder="First Name" required>
+										
+											
+								</div>
+							
+						
+                           
+							   <div style="margin-bottom: 25px; margin-left: 36.5%;" class="input-group">
+								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								   <label for="inputLastName">Last Name:</label>
+								   <input type="text" name="lastname" pattern="[A-za-z]{1,50}" class="form-control" id="inputLastName" placeholder="Last Name" required>
+							   </div>
+						   
+						   
+						   
+							   <div style="margin-bottom: 25px; margin-left: 36.5%;" class="input-group">
+								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								   <label for="inputEmail">Email:</label>
+								   <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+							   </div>
+						       
+							<center>
+								   <div style="margin-bottom: 25px" class="input-group">
+									   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									   <label for="inputPassword">Password:</label>
+									   <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+								   </div>
+							</center>
+						 
+						   
+						    <center>
+							   <div style="margin-bottom: 25px" class="input-group">
+								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								   <label for="inputCollege">College:</label>
+								   <input type="text" name="college" pattern="[A-za-z]{1,100}" class="form-control" id="inputcollege" placeholder="Name of College" required>
+							   </div>
+						    </center>
+						   
+						   
+                                    
+
+                            
+
+								<center>
+									<div style="margin-top:10px" class="form-group">
+										<!-- Button -->
+										
+										<div class="col-sm-12 controls">
+										  <!---<button onclick="window.location.href='uDine Menu.html'"><!---<a id="btn-login" href="#" class="btn btn-success">Login</button>-->
+										  <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+										</div>
+										<button type ="submit" class="btn-success">Sign-up</button>
+									</div>
+								</center>
+
+
+                                
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+					
+        </div>
+
+
+<!--
 <center>
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title">Sign up for a uDine account</div>
                             <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
-                        </div>  
+							
+                        </div>
+						
+						<!---
                         <div class="panel-body" >
                             <form id="signupform" class="form-horizontal" role="form">
                                 
@@ -113,26 +237,26 @@
                                 <div class="form-group">
                                     <label for="email" class="col-md-3 control-label">Email</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                        <input type="text" class="form-control" name="email" placeholder="Email Address" required>
                                     </div>
                                 </div>
                                     
                                 <div class="form-group">
                                     <label for="firstname" class="col-md-3 control-label">First Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="lastname" class="col-md-3 control-label">Last Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-md-3 control-label">Password</label>
                                     <div class="col-md-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                        <input type="password" class="form-control" name="passwd" placeholder="Password" required>
                                     </div>
                                 </div>
                                     
@@ -144,25 +268,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <!-- Button -->                                        
+                                                                          
                                     <div class="col-md-offset-3 col-md-9">
                                         <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
                                     </div>
                                 </div>
-                                
-            
-                                
-                                
-                                
-                            </form>
-                         </div>
-                    </div>
-
-               
-               
-                
-         </div> 
-    </div>
+                                -->
+								
+	
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
