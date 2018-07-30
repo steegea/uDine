@@ -162,6 +162,10 @@ div .panel-body{
 	
 }
 
+checkbox:focus:invalid {
+  border: 2px solid red;
+}
+
 input:focus:invalid {
   border: 2px solid red;
 }

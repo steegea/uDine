@@ -79,12 +79,14 @@ function readText(file1,file2)
 								//So last check box does not load in			> = equals  < = notequal
 								if(textByLine2[j] >"")
 								{
-									Write.innerHTML +=  '<input type="checkbox" name="checkboxall" value="'+textByLine2[j]+'">'+'&emsp;'+ textByLine2[j] +'<br>';
+									Write.innerHTML +=  '<input type="checkbox" class = "checkboxes" name="checkboxall" value="'+textByLine2[j]+'">'+'&emsp;'+ textByLine2[j] +'<br>';
 								}
 							}
 						}
 					}
-					Write.innerHTML += '<input type="submit" value="Add to Cart" onClick="doSubmit()">'
+					Write.innerHTML += '<input type="submit" id = "submitB" name = "submit" value="Add to Cart" onClick="submitOrder()"></button>'
+					validateOrder();
+					
 				}
 			}
 		}
@@ -93,9 +95,28 @@ function readText(file1,file2)
     rawFile1.send(null);
 }
 
-function doSubmit() 
-		{	
+function validateOrder()
+{
+	$(document).ready(function()
+	{
+		$('#submitB').prop("disabled", true);
+		$('input:checkbox').click(function() {
+		 if ($(this).is(':checked')) {
+		 $('#submitB').prop("disabled", false);
+		 } else {
+		 if ($('.checkboxes').filter(':checked').length < 1){
+		 $('#submitB').attr('disabled',true);
+		 }
+		 }
+		});
+	});
+}
+
+function submitOrder() 
+{	
+		
 			chkboxName = "checkboxall"
+			//submitButton = getElementById("submitbutton")
 			
 			var checkboxes = document.getElementsByName(chkboxName);
 			var checkboxesChecked = [];
@@ -106,11 +127,17 @@ function doSubmit()
 				if (checkboxes[i].checked) 
 				{
 					checkboxesChecked.push(checkboxes[i].value);
+
+					
 				}
+				
+				
 			}
+			
 			// Return the array if it is non-empty, or null
 			if(checkboxesChecked.length > 0 ? checkboxesChecked : null)
 			{
-			alert(checkboxesChecked.toString());
+				alert(checkboxesChecked.toString());
 			}
-		}
+			
+}
