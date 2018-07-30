@@ -2,20 +2,17 @@
 <html>
   <head>
 	<script type="text/javascript" src="LoadTxt.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <title></title>
     <link rel="shortcut icon" type="image/png" href="static/pics/favicon.ico">
 	<link rel = "stylesheet" href="uDine.css">
-	
-	
 
   </head>
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <hr>
-<Center><h1><img src = "uDine Logo.jpg" alt = "logo" /></h1></Center>
+<Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" /></h1></Center> 
 <hr>
 <div class="tab">
 	<button onclick="window.location.href='uDine Home.html'">Home</button>
@@ -25,48 +22,49 @@
 </div>
 
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-        <!-- Intro One-->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div  id ="menuHeading">
-							<h1>Menu</h1>
-							
-						
-			</div>
+
 			
 			<!--Menu -->
 			<script type="text/javascript">
-				window.onload = function()
-				{
+	  window.onload = function()
+	  {
         
-				}	
-			</script>
+	  }	
+	</script>
 
-			<form name = "order">
+	<form name = "order">
 	
-			<h1 style="font-family:verdana;">Breakfast</h1>
-			<div id="Breakfast">
+	<h1 style="font-family:verdana;">Breakfast</h1>
+	<div id="Breakfast">
 	
-			</div>
+	</div>
+	<hr>
 	
-			<h1 style="font-family:verdana;">Lunch</h1>
-			<div id="Lunch">
+	<h1 style="font-family:verdana;">Lunch</h1>
+	<div id="Lunch">
 
-			</div>
+	</div>
+	<hr>
 	
-			<h1 style="font-family:verdana;">Dinner</h1>
-			<div id="Dinner">
+	<h1 style="font-family:verdana;">Dinner</h1>
+	<div id="Dinner">
 		
-			</div>
+	</div>
 	
-			</form>
+	<button id="Button" type="button" onClick="doSubmit()">Add to Cart</button>
+	<button id="Button" type="button" onClick="doClear()">Clear</button>
 	
-			<script type="text/javascript">
+	</form>
 	
-				readText("./Json/Cat.txt","./Json/Item.txt");
+	<h3><div id="Cart">
+	
+	</div></h3>
+	
+	<script type="text/javascript">
+	
+		readText("./Json/Cat.txt","./Json/Item.txt");
 		
-			</script>
+	</script>
 			
 			
 		

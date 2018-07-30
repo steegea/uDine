@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<script type="text/javascript" src="LoadTxt.js"></script>
     <meta charset="utf-8">
     <title></title>
     <link rel="shortcut icon" type="image/png" href="static/pics/favicon.ico">
 	<link rel = "stylesheet" href="uDine.css">
 
   </head>
-	<body>
+  <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <hr>
 <Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" /></h1></Center>
 <hr>
 <div class="tab">
-	<button onclick="window.location.href='uDine Home.html'" class = "active">Home</button>
-	<button onclick="window.location.href='uDine Menu.html'">Menu</button>
+	<button onclick="window.location.href='uDine Home.html'">Home</button>
+	<button onclick="window.location.href='uDine Menu.html'" class = "active">Menu</button>
 	<button onclick="window.location.href='uDine Login.html'">Login</button>
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
 
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-        <!-- Intro One-->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="appHeading">
-							<h1></h1>
-							
-						</div>
-						<div class="hoursofOperation">
-							<h1>Hours of Operation</h1>
-						
-						</div>
-						
-						
-						<div id = "dininghall">
-							<img src="Images/Dining Hall.jpg" alt="logo" />
-						</div>
-						
-						<div id = "hours">
-							<img src="Images/hours.jpg" alt="hours" />
-						</div>
-							<ul class="actions">
-								<!--<a href="#two" class="button scrolly">Learn more</a>-->
-							</ul>
-					</section>
-			</div>
+
+			
+			<!--Menu -->
+			<h1 style="font-family:verdana;">Checkout</h1>
+	<div id="CheckoutDisplay">
+	
+	</div>
+	
+	<br/>
+	<button id="Button" type="button" onClick="CheckoutButton()">Confirm Order</button>
 
 
+	<script type="text/javascript">
+	
+	DisplayCheckout();
+	
+	</script>
+			
+			
+		
    		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="footer">

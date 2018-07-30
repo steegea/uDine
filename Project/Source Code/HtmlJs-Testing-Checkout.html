@@ -37,45 +37,22 @@
 		border-radius: 4px;
 	}
 	</style>
-	<script type="text/javascript">
-	  window.onload = function()
-	  {
-        
-	  }	
-	</script>
 
-	<form name = "order">
 	
-	<h1 style="font-family:verdana;">Breakfast</h1>
-	<div id="Breakfast">
-	
-	</div>
-	<hr>
-	
-	<h1 style="font-family:verdana;">Lunch</h1>
-	<div id="Lunch">
 
-	</div>
-	<hr>
+	<h1 style="font-family:verdana;">Checkout</h1>
+	<div id="CheckoutDisplay">
 	
-	<h1 style="font-family:verdana;">Dinner</h1>
-	<div id="Dinner">
-		
 	</div>
 	
-	<button id="Button" type="button" onClick="doSubmit()">Add to Cart</button>
-	<button id="Button" type="button" onClick="doClear()">Clear</button>
-	
-	</form>
-	
-	<h3><div id="Cart">
-	
-	</div></h3>
-	
+	<br/>
+	<button id="Button" type="button" onClick="CheckoutButton()">Confirm Order</button>
+
+
 	<script type="text/javascript">
 	
-		readText("./Json/Cat.txt","./Json/Item.txt");
-		
+	DisplayCheckout();
+	
 	</script>
 
 

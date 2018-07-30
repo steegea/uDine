@@ -19,7 +19,6 @@ function readText(file1,file2)
 					var textByLine1 = allText1.split("\n");
 					var textByLine2 = allText2.split("\n");
 						
-
 					//Defult Breakfast
 					var Write = document.getElementById('Breakfast');
 					
@@ -79,20 +78,39 @@ function readText(file1,file2)
 								//So last check box does not load in			> = equals  < = notequal
 								if(textByLine2[j] >"")
 								{
-									Write.innerHTML +=  '<input type="checkbox" class = "checkboxes" name="checkboxall" value="'+textByLine2[j]+'">'+'&emsp;'+ textByLine2[j] +'<br>';
+									Write.innerHTML +=  '<input type="checkbox" name="checkboxall" value="'+textByLine2[j]+'">'+'&emsp;'+ textByLine2[j] +'<br>';
 								}
 							}
 						}
 					}
-					Write.innerHTML += '<input type="submit" id = "submitB" name = "submit" value="Add to Cart" onClick="submitOrder()"></button>'
-					validateOrder();
-					
 				}
 			}
 		}
 		rawFile2.send(null);
     }
     rawFile1.send(null);
+}
+
+function doSubmit() 
+{	
+	chkboxName = "checkboxall"
+	
+	var checkboxes = document.getElementsByName(chkboxName);
+	var checkboxesChecked = [];
+	// loop over them all
+	for (var i=0; i<checkboxes.length; i++) 
+	{
+		// And stick the checked ones onto an array...
+		if (checkboxes[i].checked) 
+		{
+			checkboxesChecked.push(checkboxes[i].value);
+		}
+	}
+	// Return the array if it is non-empty, or null
+	if(checkboxesChecked.length > 0 ? checkboxesChecked : null)
+	{
+	DisplayCart(checkboxesChecked);
+	}
 }
 
 function validateOrder()
@@ -111,33 +129,68 @@ function validateOrder()
 		});
 	});
 }
+	
+function doClear()
+{
+	chkboxName = "checkboxall"
+	var checkboxes = document.getElementsByName(chkboxName);
+	//Clears checks
+	for (var i=0; i<checkboxes.length; i++) 
+	{
+		checkboxes[i].checked = false;
+	}
+	//Clears Cart
+	var Write = document.getElementById('Cart');
+	Write.innerHTML = "";
+}
+	
+function DisplayCart(toCartArray)
+{
+	var Write = document.getElementById('Cart');
+	//Cart Text
+	Write.innerHTML = "<hr>"+'<h1 style="font-family:verdana;">Cart</h1>';
+	//Add items to cart on website
+	for(var i=0; i<toCartArray.length; i++)
+	{
+		Write.innerHTML +=  i+1+") "+toCartArray[i]+"<br />";
+	}
+	//Checkout Button
+	Write.innerHTML += "<br/>"+'<button id="Button" type="button" onClick="ToCheckout()">Checkout</button>';
+	//Scrolls to bottom
+	window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
 
-function submitOrder() 
-{	
-		
-			chkboxName = "checkboxall"
-			//submitButton = getElementById("submitbutton")
-			
-			var checkboxes = document.getElementsByName(chkboxName);
-			var checkboxesChecked = [];
-			// loop over them all
-			for (var i=0; i<checkboxes.length; i++) 
-			{
-				// And stick the checked ones onto an array...
-				if (checkboxes[i].checked) 
-				{
-					checkboxesChecked.push(checkboxes[i].value);
+	//Store array for use on another page
+	if( !window.localStorage)
+	{
+		alert("Sorry, you're using an ancient browser");
+	}
+	else 
+	{
+		localStorage.myArray = JSON.stringify(toCartArray);
+	}
+}
 
-					
-				}
-				
-				
-			}
-			
-			// Return the array if it is non-empty, or null
-			if(checkboxesChecked.length > 0 ? checkboxesChecked : null)
-			{
-				alert(checkboxesChecked.toString());
-			}
-			
+function ToCheckout()
+{
+	//Change page
+	window.location.href='uDine Menu Checkout.html'
+}
+
+function DisplayCheckout()
+{
+	//Get stored data and set it back to toCartArray
+	var toCartArray = JSON.parse(localStorage.myArray);
+	
+	var Write = document.getElementById('CheckoutDisplay');
+	
+	for(var i=0; i<toCartArray.length; i++)
+	{
+		Write.innerHTML +=  i+1+") "+toCartArray[i]+"<br />";
+	}
+}
+
+function CheckoutButton()
+{
+	alert("Your order has been confirmed");
+	window.location.href='uDine Menu.html'
 }
