@@ -66,7 +66,7 @@ i, h1.about_us_text {
 	display: inline-block;
 }
 
-#Button
+#AddToCartButton.OrderButtons, #ClearButton.OrderButtons, #CheckoutButton.OrderButtons
 {
 	font-size: 18px;
 	border: none;
@@ -78,7 +78,19 @@ i, h1.about_us_text {
 	border-radius: 4px;
 }
 
+#AddToCartButton.OrderButtons:hover, #ClearButton.OrderButtons:hover{
+	border: 1px solid black;
+}
+
 .footer{
+	position: absolute;
+	left: 50%;
+	margin-top: 25%;
+	margin-left:-150px;
+	text-align: center;
+}
+
+.homefooter{
 	position: absolute;
 	left: 50%;
 	margin-top: 25%;
@@ -154,13 +166,60 @@ mark.warm{
 	font-family: "Baskerville", Times, serif;
 	background-color: #bf1f16;
 	padding: 10px;
+	width: 40%;
 	
 }
 
 .panel-body{
 	font-family: "Baskerville", Times, serif;
-	background: linear-gradient(#f4784b, #ed5923);
-	padding: 10px;
+	padding-bottom: 2px;
+	padding-left:-2px;
+	
+}
+
+div .panel-body{
+	font-family: "Baskerville", Times, serif;
+	background: linear-gradient(#f4cc4b, #ed3f23);
+	
+}
+
+checkbox:focus:invalid {
+  border: 2px solid red;
+}
+
+input:hover:invalid {
+  border: 2px solid red;
+}
+
+input:focus:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 1px solid black;
+}
+
+#loginButton, #signupButton
+{
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #bf1f16;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+#loginButton.AccountButtons:hover, #signupButton.AccountButtons:hover{
+	border: 1px solid black;
+}
+
+div #signupbox .panel-body .input-group{
+	text-align: center-left;
+	display: block;
+	position: relative;
+
 }
 
 /*
