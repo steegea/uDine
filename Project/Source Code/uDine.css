@@ -66,7 +66,7 @@ i, h1.about_us_text {
 	display: inline-block;
 }
 
-#AddToCartButton.OrderButtons, #ClearButton.OrderButtons, #CheckoutButton.OrderButtons
+.MenuButtons
 {
 	font-size: 18px;
 	border: none;
@@ -78,7 +78,7 @@ i, h1.about_us_text {
 	border-radius: 4px;
 }
 
-#AddToCartButton.OrderButtons:hover, #ClearButton.OrderButtons:hover{
+.MenuButtons:hover{
 	border: 1px solid black;
 }
 
@@ -199,7 +199,7 @@ input:valid {
   border: 1px solid black;
 }
 
-#loginButton, #signupButton
+.AccountButtons
 {
 	font-size: 18px;
 	border: none;
@@ -211,7 +211,7 @@ input:valid {
 	border-radius: 4px;
 }
 
-#loginButton.AccountButtons:hover, #signupButton.AccountButtons:hover{
+.AccountButtons:hover{
 	border: 1px solid black;
 }
 

@@ -109,7 +109,11 @@ function doSubmit()
 	// Return the array if it is non-empty, or null
 	if(checkboxesChecked.length > 0 ? checkboxesChecked : null)
 	{
-	DisplayCart(checkboxesChecked);
+		DisplayCart(checkboxesChecked);
+	}
+	
+	else{
+		alert("You need to select at least 1 item!");
 	}
 }
 
@@ -155,7 +159,7 @@ function DisplayCart(toCartArray)
 		Write.innerHTML +=  i+1+") "+toCartArray[i]+"<br />";
 	}
 	//Checkout Button
-	Write.innerHTML += "<br/>"+'<button id="Button" type="button" onClick="ToCheckout()">Checkout</button>';
+	Write.innerHTML += "<br/>"+'<button class = "MenuButtons" id="CheckoutButton" type="button" onClick="ToCheckout()">Checkout</button>';
 	//Scrolls to bottom
 	window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
 
