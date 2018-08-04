@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="shortcut icon" type="image/png" href="static/pics/favicon.ico">
-	<link rel = "stylesheet" href="uDine.css">
+	<link rel = "stylesheet" href="http://localhost:8080/udine/uDine.css">
 
-	<link href="//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="http://localhost:8080///netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	
-	<script src="//netdna.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="http://localhost:8080///netdna.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
@@ -22,7 +22,7 @@
 <div class="tab">
 	<button onclick="window.location.href='uDine Home.html'">Home</button>
 	<button onclick="window.location.href='uDine Menu.html'">Menu</button>
-	<button onclick="window.location.href='uDine Login.html'" class = "active">Login</button>
+	<button onclick="window.location.href='uDine Login.php'" class = "active">Login</button>
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
 
@@ -99,14 +99,14 @@
 
                         <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form">
+                        <form id="loginform" class="form-horizontal" role="form" action="uDine Login.php" method="post">
                             
 								<div></div>
 								
 								<div style="margin-bottom: 25px; margin-left: 34%;" class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									<label for="inputFirstName">First Name:</label>
-									<input type="text" name="firstname" pattern="[A-za-z]{1,50}" id = "inputFirstName" class="form-control" placeholder="First Name" required>
+									<input type="text" name="firstname" pattern="[A-Za-z]+" id = "inputFirstName" class="form-control" placeholder="First Name" required>
 										
 											
 								</div>
@@ -116,7 +116,7 @@
 							   <div style="margin-bottom: 25px; margin-left: 34%;" class="input-group">
 								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 								   <label for="inputLastName">Last Name:</label>
-								   <input type="text" name="lastname" pattern="[A-za-z]{1,50}" class="form-control" id="inputLastName" placeholder="Last Name" required>
+								   <input type="text" name="lastname" pattern="[A-Za-z]+" class="form-control" id="inputLastName" placeholder="Last Name" required>
 							   </div>
 						   
 						   
@@ -140,13 +140,13 @@
 							   <div style="margin-bottom: 25px" class="input-group">
 								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 								   <label for="inputCollege">College:</label>
-								   <input type="text" name="college" pattern="[A-za-z]{1,100}" class="form-control" id="inputcollege" placeholder="Name of College" required>
+								   <input type="text" name="college" pattern="[A-Za-z]+" class="form-control" id="inputcollege" placeholder="Name of College" required>
 							   </div>
 						    </center>
 						   
 							<center>
 								<div style="margin-top:10px" class="form-group">
-									<button type ="submit" class="AccountButtons" id = "signupButton">Sign-up</button>
+									<button type ="submit" name = "signupsubmit" class="AccountButtons" id = "signupButton">Sign-up</button>
 								</div>
 							</center>
 
@@ -169,13 +169,13 @@
 	</body>
 		
 		<!-- Scripts -->
-			<script src="static/js/jquery.min.js"></script>
-			<script src="static/js/jquery.scrollex.min.js"></script>
-			<script src="static/js/jquery.scrolly.min.js"></script>
-			<script src="static/js/skel.min.js"></script>
-			<script src="static/js/util.js"></script>
+			<script src="http://localhost:8080/static/js/jquery.min.js"></script>
+			<script src="http://localhost:8080/static/js/jquery.scrollex.min.js"></script>
+			<script src="http://localhost:8080/static/js/jquery.scrolly.min.js"></script>
+			<script src="http://localhost:8080/static/js/skel.min.js"></script>
+			<script src="http://localhost:8080/static/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="static/js/main.js"></script>
+			<script src="http://localhost:8080/static/js/main.js"></script>
 
 
 
@@ -186,4 +186,45 @@
     $( "#datepicker" ).datepicker();
   } );
   </script>
+  
+  <?php
+	//Establishing Connection with Server
+	$connection = mysqli_connect("localhost", "root", "wit123", "udine");
+	
+	$db_table = "users";
+
+	//Selecting Database from Server
+	//$db = mysql_select_db("colleges", $connection);
+	
+	
+	if(isset($_POST['signupsubmit']))
+	{
+   
+		//Fetching variables of the form which travels in URL
+		
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$email = $_POST['email'];
+		$password = password_hash($password, PASSWORD_DEFAULT);
+		$college = $_POST['college'];
+		
+		if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password) && !empty($college)){
+		//Insert Query of SQL
+		
+		$sql = "INSERT INTO ". $db_table. " (FirstName, LastName, Email, Password, College)
+			VALUES('$firstname', '$lastname', '$email', '$password', '$college')";
+		$query = mysqli_query($connection, $sql);
+		echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+		}
+		else{
+		echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";   
+		}
+ 
+	}
+	//Closing Connection with Server
+	mysqli_close($connection);
+?>				
+
 </html>
+
+
