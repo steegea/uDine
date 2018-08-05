@@ -45,7 +45,7 @@ function readText(file1,file2)
 							{
 								Write = document.getElementById('Dinner');
 							}
-							Write.innerHTML +=  "<h3>"+"&emsp;" + textByLine1[i] +"</h3>";
+							Write.innerHTML +=  "<h2>"+"&emsp;" + textByLine1[i] +"</h2>";
 						}
 						
 						for(j;j<textByLine2.length;j++)
@@ -195,6 +195,13 @@ function DisplayCheckout()
 
 function CheckoutButton()
 {
-	alert("Your order has been confirmed");
+	var addedTime = 20;
+	var d = new Date();
+	var apm = "AM";
+	if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
+	var m = d.getMinutes();
+	m = m + addedTime;
+	if(m > 59){m = m-60; h++; if(m<10){var u = "0"+ m; m = u;}}
+	alert("Your order has been placed and will be ready for pickup at "+h+":"+m+" "+apm+".");
 	window.location.href='uDine Menu.html'
 }

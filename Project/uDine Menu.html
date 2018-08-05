@@ -11,7 +11,6 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<hr>
 <Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" /></h1></Center> 
 <hr>
 <div class="tab">
@@ -25,28 +24,36 @@
 
 			
 			<!--Menu -->
-			<script type="text/javascript">
+	<script type="text/javascript">
 	  window.onload = function()
 	  {
-        
+	  var d = new Date();
+	  var apm = "AM";
+	  if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
+	  var m = d.getMinutes();
+		
+	  if(h<=10&&apm=="AM"){B.scrollIntoView(true);}
+	  if(((h==11||h==12)&&apm=="AM")||((h<=3)&&apm=="PM")){L.scrollIntoView(true);}
+	  if(h>3 && apm=="PM"){D.scrollIntoView(true);}
+
 	  }	
 	</script>
 
 	<form name = "order">
 	
-	<h1 style="font-family:verdana;">Breakfast</h1>
+	<h1 id="B" style="font-family:verdana;">Breakfast</h1>
 	<div id="Breakfast">
 	
 	</div>
 	<hr>
 	
-	<h1 style="font-family:verdana;">Lunch</h1>
+	<h1 id="L" style="font-family:verdana;">Lunch</h1>
 	<div id="Lunch">
 
 	</div>
 	<hr>
 	
-	<h1 style="font-family:verdana;">Dinner</h1>
+	<h1 id="D" style="font-family:verdana;">Dinner</h1>
 	<div id="Dinner">
 		
 	</div>
