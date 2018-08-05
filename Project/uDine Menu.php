@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,11 +11,8 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<Center><h1><img src = "Images/uDine Logo.jpg" id = "udinelogo" alt = "logo" /></h1></Center>
-	
-	<!--<align = "right" <button type ="submit" name = "signout_Button" class="AccountButtons" id = "signOutButton">Sign Out</button></align>-->
-
-
+<Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" />	  
+</h1></Center>
 <hr>
 
 <div class="tab">

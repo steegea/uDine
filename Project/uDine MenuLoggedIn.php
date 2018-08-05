@@ -1,3 +1,6 @@
+<?php
+   include('session.php');
+?>
 
 <!DOCTYPE html>
 <html>
@@ -12,17 +15,19 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<Center><h1><img src = "Images/uDine Logo.jpg" id = "udinelogo" alt = "logo" /></h1></Center>
+	<Center><h1><img src = "Images/uDine Logo.jpg" id = "udinelogo" alt = "logo" /> <button align = "right" type ="submit" onclick = "window.location.href='uDine Login.php'" name = "signout_Button" class="AccountButtons" id = "signOutButton">Sign Out</button></align></h1></Center>
 	
 	<!--<align = "right" <button type ="submit" name = "signout_Button" class="AccountButtons" id = "signOutButton">Sign Out</button></align>-->
 
 
 <hr>
 
+<p name = "loginmessage" id = "loginmsg"> <b>You are logged in as: </b><?php echo $login_session; ?></p>
+
 <div class="tab">
 	<button onclick="window.location.href='uDine Home.html'">Home</button>
-	<button onclick="window.location.href='uDine Menu.html'" class = "active">Menu</button>
-	<button onclick="window.location.href='uDine Login.php'">Login</button>
+	<button onclick="window.location.href='uDine MenuLoggedIn.html'" class = "active">Menu</button>
+	<button onclick="window.location.href='uDine LoginPageLoggedIn.php'">Login</button>
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
 

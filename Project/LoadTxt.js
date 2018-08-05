@@ -91,6 +91,7 @@ function readText(file1,file2)
     rawFile1.send(null);
 }
 
+
 function doSubmit() 
 {	
 	chkboxName = "checkboxall"
@@ -177,7 +178,7 @@ function DisplayCart(toCartArray)
 function ToCheckout()
 {
 	//Change page
-	window.location.href='uDine Menu Checkout.html'
+	window.location.href='uDine Menu Checkout.html';
 }
 
 function DisplayCheckout()

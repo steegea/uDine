@@ -1,4 +1,7 @@
 <?php
+
+include('session.php');
+
 	//Establishing Connection with Server
 	//$connection = mysqli_connect("localhost", "root", "wit123", "udine");
 	
@@ -34,7 +37,7 @@
          //session_register("myemail");
          $_SESSION['login_user'] = $myemail;
          
-         header("location: uDine MenuLoggedIn.php");
+         header("location: uDine Menu.html");
       }else {
          $pw_error = "Invalid username or password!";
       }
@@ -87,12 +90,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <hr>
-<Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" /></h1></Center>
+<Center><h1><img src = "Images/uDine Logo.jpg" id = "udinelogo" alt = "logo" /><align = "right" <button type ="submit" onclick = "window.location.href='uDine Login.php'" name = "signout_Button" class="AccountButtons" id = "signOutButton">Sign Out</button></align></h1></Center>
 <hr>
+
+<p name = "loginmessage" id = "loginmsg"> <b>You are logged in as: </b><?php echo $login_session; ?></p>
+
 <div class="tab">
 	<button onclick="window.location.href='uDine Home.html'">Home</button>
-	<button onclick="window.location.href='uDine Menu.html'">Menu</button>
-	<button onclick="window.location.href='uDine Login.php'" class = "active">Login</button>
+	<button onclick="window.location.href='uDine MenuLoggedIn.php'">Menu</button>
+	<button onclick="window.location.href='uDine LoginPageLoggedIn.php'" class = "active">Login</button>
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
 

@@ -18,7 +18,11 @@ body {
 h1 img{
 	height: 12.5%;
 	width: 12.5%;
+	color: red;
+	font-weight: bold;
+	font-family: "Papyrus", Times, serif;
 }
+
 h1{
 	color: red;
 	font-weight: bold;
@@ -28,6 +32,17 @@ h1{
 .appHeading{
 	
 	margin-left: 7.5%;
+}
+
+#signOutButton.AccountButtons{
+	position: relative;
+	float: right;
+}
+
+#loginmsg {
+	
+	font-size: 15px;
+	float: right;
 }
 
 .hoursofOperation{
