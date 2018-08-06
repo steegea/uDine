@@ -12,7 +12,7 @@
 	$connection = mysqli_connect("localhost", "root", "wit123", "udine");
 	$db_table = "users";
 	
-	$pw_error = "";
+	$signup_error = $login_error = $signup_successful = "";
    
    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login_Button'])) 
    {
@@ -36,7 +36,7 @@
          
          header("location: uDine MenuLoggedIn.php");
       }else {
-         $pw_error = "Invalid username or password!";
+         $login_error = "Invalid username and/or password!";
       }
    }
 	
@@ -51,21 +51,44 @@
 		$password = $_POST['password']; //password_hash($password, PASSWORD_DEFAULT);
 		$college = $_POST['college'];
 		
-		if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password) && !empty($college)){
-		//Insert Query of SQL
-		
-		$sql = "INSERT INTO ". $db_table. " (FirstName, LastName, Email, Password, College)
+		if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password) && !empty($college))
+		{
+			$myemail = mysqli_real_escape_string($connection,$_POST['email']);
+		    $mypassword = mysqli_real_escape_string($connection,$_POST['password']); 
+		  
+		    $sql = "SELECT UserID, 'active' FROM users WHERE Email = '$myemail'";
+		    $result = mysqli_query($connection, $sql);
+		    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		    $active = $row['active'];
+      
+			$count = mysqli_num_rows($result);
+			
+			//Insert Query of SQL
+			if($count == 1) 
+			{
+			 $signup_error = "Error: An account with this email already exists!";
+			 
+			}
+			else 
+			{
+			 $sql = "INSERT INTO ". $db_table. " (FirstName, LastName, Email, Password, College)
 			VALUES('$firstname', '$lastname', '$email', '$password', '$college')";
-		$query = mysqli_query($connection, $sql);
+				$query = mysqli_query($connection, $sql);
+				
+				$signup_successful = "You have successfully created a uDine account!";
+			}
+		}
+
+		
+		
 		//echo "<br/><br/><span>Data Inserted successfully...!!</span>";
-		}
-		else{
-		echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";   
-		}
- 
 	}
+		
+ 
+	
 	//Closing Connection with Server
 	mysqli_close($connection);
+	
 ?>				
 
 <!DOCTYPE html>
@@ -133,7 +156,7 @@
 									<button type ="submit" name = "login_Button" class="AccountButtons" id = "loginButton">Login</button>
                                 </div>
 
-								<?php echo $pw_error?>
+								<?php echo $login_error?>
 
                                 <div class="form-group">
                                     <div class="col-md-12 control">
@@ -169,9 +192,13 @@
                     <div style="padding-top:30px;" class="panel-body">
 
                         <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
+						
+						
                             
                         <form id="loginform" class="form-horizontal" role="form" action="uDine Login.php" method="post">
-                            
+						
+								
+								
 								<div></div>
 								
 								<div style="margin-bottom: 25px; margin-left: 34%;" class="input-group">
@@ -181,9 +208,7 @@
 										
 											
 								</div>
-							
 						
-                           
 							   <div style="margin-bottom: 25px; margin-left: 34%;" class="input-group">
 								   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 								   <label for="inputLastName">Last Name:</label>
@@ -214,21 +239,27 @@
 								   <input type="text" name="college" pattern="[A-Za-z]+" class="form-control" id="inputcollege" placeholder="Name of College" required>
 							   </div>
 						    </center>
+							
+							<center>
+								<?php echo $signup_error?>
+								<?php echo $signup_successful?>
+							</center>
+							
+							<br></br>
 						   
 							<center>
 								<div style="margin-top:10px" class="form-group">
 									<button type ="submit" name = "signup_Button" class="AccountButtons" id = "signupButton">Sign-up</button>
 								</div>
+									
 							</center>
-
-
-                                
+							
                             </form>     
 						
 						</div>                     
                     </div>  
 		</div>
-
+		
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="footer">
