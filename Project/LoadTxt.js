@@ -199,7 +199,8 @@ function CheckoutButton()
 	var addedTime = 20;
 	var d = new Date();
 	var apm = "AM";
-	if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
+	if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; }
+	else{var h = d.getHours();}
 	var m = d.getMinutes();
 	m = m + addedTime;
 	if(m > 59){m = m-60; h++; if(m<10){var u = "0"+ m; m = u;}}

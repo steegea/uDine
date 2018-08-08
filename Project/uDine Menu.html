@@ -36,7 +36,9 @@
 	  var d = new Date();
 	  var apm = "AM";
 	  if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
+	  else{var h = d.getHours();}
 	  var m = d.getMinutes();
+	  
 		
 	  if(h<=10&&apm=="AM"){B.scrollIntoView(true);}
 	  if(((h==11||h==12)&&apm=="AM")||((h<=3)&&apm=="PM")){L.scrollIntoView(true);}
