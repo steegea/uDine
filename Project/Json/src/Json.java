@@ -145,9 +145,22 @@ public class Json
 
         //Web link with date included
         //Wentworth                                                                                                                                         2018-07-10
-        String url = "https://new.dineoncampus.com/v1/location/menu.json?site_id=5751fd3390975b60e048938a&location_id=586bf1306c1f84daeb6c89cb&date="+dateFormat.format(date)+"&platform=0";
+        String Wentworth = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5751fd3390975b60e048938a&location_id=586bf1306c1f84daeb6c89cb&date="+dateFormat.format(date)+"&platform=0";
         //Northeastern
-//        String url = "https://new.dineoncampus.com/v1/location/menu.json?site_id=5751fd2b90975b60e048929a&location_id=586d17503191a27120e60dec&date="+dateFormat.format(date)+"&platform=0";
+        String Northeastern = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5751fd2b90975b60e048929a&location_id=586d17503191a27120e60dec&date="+dateFormat.format(date)+"&platform=0";
+        //Mass Art
+        String MassArt = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5751fd3390975b60e048938a&location_id=58b5bbfd3191a2e79cc46b90&date="+dateFormat.format(date)+"&platform=0";
+        //U Mass Dart
+        String UMassDart = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5751fd4090975b60e04894e6&location_id=5a66351ef56b7a3616281f05&date="+dateFormat.format(date)+"&platform=0";
+        //Illinois Tech
+        String IllinoisTech = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5ae72b5df3eeb60b57d3b76e&location_id=5b10d972f3eeb60909e0148a&date="+dateFormat.format(date)+"&platform=0";
+        //New England College
+        String NewEngland = "https://api.dineoncampus.com/v1/location/menu.json?site_id=5751fd3790975b60e04893fe&location_id=58755119ee596f095847558b&date="+dateFormat.format(date)+"&platform=0";
+
+        //Options are above.  Change the school below to change the menu
+        //**************************************************************************************************************
+        String url = Wentworth;
+        //**************************************************************************************************************
 
         //Get url
         URL obj = new URL(url);

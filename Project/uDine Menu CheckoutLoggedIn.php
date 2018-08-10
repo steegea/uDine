@@ -1,6 +1,8 @@
 <?php
    include('session.php');
 ?>
+<!--Unused Menu Checkout page-->
+<!--Intended to be displayed when users are logged-in-->
 
 <!DOCTYPE html>
 <html>

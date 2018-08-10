@@ -1,10 +1,10 @@
-html{
-	
-}
+
+/*div*/
 div {
     	margin: 70px;
 }
 
+/*Formats HTML document body*/
 body {
 	background-color: #e8de96;
 	/*background: linear-gradient(#f7de85, #f2cb41);*/
@@ -15,6 +15,7 @@ body {
 
 }
 
+/*Formats h1 heading size images*/
 h1 img{
 	height: 12.5%;
 	width: 12.5%;
@@ -23,29 +24,33 @@ h1 img{
 	font-family: "Papyrus", Times, serif;
 }
 
+/*Formats elements that have an h1 heading size*/
 h1{
 	color: red;
 	font-weight: bold;
 	font-family: "Papyrus", Times, serif;
 }
 
+/*App heading on home page*/
 .appHeading{
 	
 	margin-left: 7.5%;
 }
 
+/*Account sign-out button*/
 #signOutButton.AccountButtons{
 	position: relative;
 	float: right;
 }
 
+/*Login message*/
 #loginmsg {
 	
 	font-size: 15px;
 	float: right;
 }
 
-
+/*Hours of Operation (Home page)*/
 .hoursofOperation{
 	float: left;
 	margin-right: 21%;
@@ -54,10 +59,12 @@ h1{
 	font-family: "verdana";
 }
 
+/*Formats the interaction between the app heading and hours of operation photo*/
 .appHeading, .hoursofOperation{
 	display: inline-block;
 }
 
+/*Formats "About" page text*/
 p, h1.about_us_text {
 	color: black;
 	font-weight: normal;
@@ -65,7 +72,7 @@ p, h1.about_us_text {
 	font-size: 25px;
 }
 
-
+/*Formats an image of a dining hall*/
 #dininghall img{
 	margin-top: -10%;
 	height: 60%;
@@ -74,6 +81,7 @@ p, h1.about_us_text {
 	
 }
 
+/*Formats hours of operation image*/
 #hours img{
 	margin-top:-10%;
 	height: 60%;
@@ -83,14 +91,18 @@ p, h1.about_us_text {
 	float: right;
 
 }
+
+/*About page section titles*/
 #AboutTitles{
 	font-family: "verdana";
 }
 
+/*Formats interaction between dining hall and hours image*/
 #dininghall img, #hours img{
 	display: inline-block;
 }
 
+/*Formats buttons that are part of the "menuButtons" class*/
 .MenuButtons
 {
 	font-size: 18px;
@@ -103,10 +115,12 @@ p, h1.about_us_text {
 	border-radius: 4px;
 }
 
+/*If the user hovers over one of the "menuButtons"*/
 .MenuButtons:hover{
 	border: 1px solid black;
 }
 
+/*Footers on the menu, login, and about pages*/
 .footer{
 	position: absolute;
 	left: 50%;
@@ -115,6 +129,7 @@ p, h1.about_us_text {
 	text-align: center;
 }
 
+/*Footer on the home page*/
 .homefooter{
 	position: absolute;
 	left: 50%;
@@ -123,18 +138,19 @@ p, h1.about_us_text {
 	text-align: center;
 }
 
+/*Formats elements that are part of the "input-group" class*/
 .input-group, .input-group p{
 	margin: auto;
 }
 
 
-/* Style the tab */
+/* Styles the tabs */
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
-/* Style the buttons inside the tab */
+/* Style the buttons inside the tabs*/
 .tab button {
     background-color: inherit;
     float: left;
@@ -148,35 +164,20 @@ p, h1.about_us_text {
 	font-family: "Helvetica", Times, serif;
 	
 }
-/* Change background color of buttons on hover */
-
-
+/*If the user hovers over one of the universal links*/
 .tab button:hover {
     background-color: #bf1f16;
 	color: white;
 	
 }
 
-/*
-.tab button:focus {
-    background-color: #bf1f16;
-	color: white;
-	
-}
-*/
-
-mark.warm{
-	color: #d19304;
-	background: none;
-}
-
- /*Create an active/current tablink class*/
+/*Styles the tabs when the user is on a certain page*/
 .tab button.active {
     color: white;
     background-color: #bf1f16;
 }
 
-/* Style the tab content */
+/*Style the tab content*/
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -184,6 +185,7 @@ mark.warm{
     animation: fadeEffect 1s;
 }
 
+/*Formats elements in the "panel-title" class*/
 .panel-title{
 	font-weight: bold;
 	font-size: 20px;
@@ -195,6 +197,7 @@ mark.warm{
 	
 }
 
+/*Formats elements in the "panel-body" class*/
 .panel-body{
 	font-family: "Baskerville", Times, serif;
 	padding-bottom: 2px;
@@ -202,28 +205,34 @@ mark.warm{
 	
 }
 
+/*Formats divs in the "panel-body" class*/
 div .panel-body{
 	font-family: "Baskerville", Times, serif;
 	background: linear-gradient(#f4cc4b, #ed3f23);
 	
 }
 
+/*If the user has not selected a checkbox*/
 checkbox:focus:invalid {
   border: 2px solid red;
 }
 
+/*If the user hovers over an invalid input field*/
 input:hover:invalid {
   border: 2px solid red;
 }
 
+/*If the user focuses over an invalid input field*/
 input:focus:invalid {
   border: 2px solid red;
 }
 
+/*If the input field is valid*/
 input:valid {
   border: 1px solid black;
 }
 
+/*Formats buttons in the "AccountButtons" class*/
 .AccountButtons
 {
 	font-size: 18px;
@@ -236,27 +245,18 @@ input:valid {
 	border-radius: 4px;
 }
 
+/*If the user hovers over an "AccountButtons" button*/
 .AccountButtons:hover{
 	border: 1px solid black;
 }
 
+/*Styles divs associated with the "signupbox" id and the "panel-body" & "input-group" classes*/
 div #signupbox .panel-body .input-group{
 	text-align: center-left;
 	display: block;
 	position: relative;
 
 }
-
-/*
-.panel-heading{
-    padding-bottom: -2px;
-	padding-top: -2px;
-	padding-left:-10px;
-	padding-right:-10px;
-	
-}
-
-*/
 
 /* Fade in tabs */
 @-webkit-keyframes fadeEffect {

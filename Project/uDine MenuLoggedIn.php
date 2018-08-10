@@ -3,6 +3,9 @@
 ?>
 
 <!DOCTYPE html>
+
+<!--uDine MenuLoggedIn PHP File-->
+<!--Pseudocode: Refer to uDine MenuLoggedIn.html-->
 <html>
   <head>
 	<script type="text/javascript" src="LoadTxt.js"></script>

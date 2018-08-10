@@ -2,6 +2,97 @@
 
 include('session.php');
 
+session_start();
+	
+	//Initiate a connection to the "udine" database containing a table called "users"
+	$connection = mysqli_connect("localhost", "root", "wit123", "udine");
+	$db_table = "users";
+	
+	//Initialize log-in/sign-up messages
+	$signup_error = $login_error = $signup_successful = "";
+   
+   //Checks whether the user has clicked on the login button
+   if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login_Button'])) 
+   {
+      //Variables that store user's email & password
+      $myemail = mysqli_real_escape_string($connection,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($connection,$_POST['password']); 
+     
+	  //Uses a SQL SELECT statement to verify the user's account credentials (exists in the udine database)
+      $sql = "SELECT UserID, 'active' FROM users WHERE Email = '$myemail' and Password = '$mypassword'";
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      $count = mysqli_num_rows($result);
+      
+      //If the user's email & password matches a record in the database, the user is signed-in
+	  if($count == 1) 
+	  {
+		$_SESSION['login_user'] = $myemail;
+         
+		header("location: uDine MenuLoggedIn.php");
+      }
+	  
+	  //Otherwise, let the user know their email, password, or both are invalid
+	  else 
+	  {
+		$login_error = "Invalid username and/or password!";
+      }
+   }
+	
+	//Checks whether the user has clicked on the signup button
+	if(isset($_POST['signup_Button']))
+	{
+		//Variables that store values held in the account sign-up form fields
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$email = $_POST['email'];
+		$password = $_POST['password']; //password_hash($password, PASSWORD_DEFAULT);
+		$college = $_POST['college'];
+		
+		//Checks to see whether all form fields are filled out
+		if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password) && !empty($college))
+		{
+			//Variables that store user's email & password
+			$myemail = mysqli_real_escape_string($connection,$_POST['email']);
+		    $mypassword = mysqli_real_escape_string($connection,$_POST['password']); 
+		  
+			//SQL SELECT statement that verifies if a user has an account using a specific email
+		    $sql = "SELECT UserID, 'active' FROM users WHERE Email = '$myemail'";
+		    $result = mysqli_query($connection, $sql);
+		    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		    $active = $row['active'];
+			$count = mysqli_num_rows($result);
+			
+			//If the email already exists in the database, display an error message
+			//The account is not created (added to the database)
+			if($count == 1) 
+			{
+			 $signup_error = "Error: An account with this email already exists!";
+			 
+			}
+			
+			/*
+				Otherwise, a SQL INSERT statement is executed which adds the user's first name, last name, email address, password, and college name
+				to the database
+			*/
+			else 
+			{
+			 $sql = "INSERT INTO ". $db_table. " (FirstName, LastName, Email, Password, College)
+			VALUES('$firstname', '$lastname', '$email', '$password', '$college')";
+				$query = mysqli_query($connection, $sql);
+				
+				$signup_successful = "You have successfully created a uDine account!";
+			}
+		}
+
+	}
+		
+ 
+	
+	//Closes connection to the database
+	mysqli_close($connection);
+/*
 	//Establishing Connection with Server
 	//$connection = mysqli_connect("localhost", "root", "wit123", "udine");
 	
@@ -69,9 +160,13 @@ include('session.php');
 	}
 	//Closing Connection with Server
 	mysqli_close($connection);
+	*/
 ?>				
 
 <!DOCTYPE html>
+<!--uDine Login Page-->
+<!--It is the same as uDine Login.php with the addition of more features to let the user know they are logged in-->
+<!--To see most of the pseudocode, please view uDine Login.php-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -79,9 +174,9 @@ include('session.php');
     <link rel="shortcut icon" type="image/png" href="static/pics/favicon.ico">
 	<link rel = "stylesheet" href="http://localhost:8080/udine/uDine.css">
 
-	<link href="http://localhost:8080///netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	
-	<script src="http://localhost:8080///netdna.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="netdna.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
@@ -90,9 +185,11 @@ include('session.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <hr>
+<!--Sign out button-->
 <Center><h1><img src = "Images/uDine Logo.jpg" id = "udinelogo" alt = "logo" /><align = "right" <button type ="submit" onclick = "window.location.href='uDine Login.php'" name = "signout_Button" class="AccountButtons" id = "signOutButton">Sign Out</button></align></h1></Center>
 <hr>
 
+<!--Message that lets the user know they are signed in (displays the email used to log-in to the account)-->
 <p name = "loginmessage" id = "loginmsg"> <b>You are logged in as: </b><?php echo $login_session; ?></p>
 
 <div class="tab">
@@ -246,11 +343,11 @@ include('session.php');
 	</body>
 		
 		<!-- Scripts -->
-			<script src="http://localhost:8080/static/js/jquery.min.js"></script>
-			<script src="http://localhost:8080/static/js/jquery.scrollex.min.js"></script>
-			<script src="http://localhost:8080/static/js/jquery.scrolly.min.js"></script>
-			<script src="http://localhost:8080/static/js/skel.min.js"></script>
-			<script src="http://localhost:8080/static/js/util.js"></script>
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="http://localhost:8080/static/js/main.js"></script>
 

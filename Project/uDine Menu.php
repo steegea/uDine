@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!--uDine Menu PHP file-->
+<!--Pseudocode: Refer to uDine Menu.html-->
 <html>
   <head>
 	<script type="text/javascript" src="LoadTxt.js"></script>
@@ -21,25 +24,6 @@
 	<button onclick="window.location.href='uDine Login.php'">Login</button>
 	<button onclick="window.location.href='uDine About.html'">About</button>
 </div>
-
-
-
-			
-			<!--Menu -->
-	<script type="text/javascript">
-	  window.onload = function()
-	  {
-	  var d = new Date();
-	  var apm = "AM";
-	  if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
-	  var m = d.getMinutes();
-		
-	  if(h<=10&&apm=="AM"){B.scrollIntoView(true);}
-	  if(((h==11||h==12)&&apm=="AM")||((h<=3)&&apm=="PM")){L.scrollIntoView(true);}
-	  if(h>3 && apm=="PM"){D.scrollIntoView(true);}
-
-	  }	
-	</script>
 
 	<form name = "order">
 	

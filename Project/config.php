@@ -1,4 +1,6 @@
 <?php
+	
+//Parameters to establish connection to mySQL database
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', 'wit123');

@@ -2,6 +2,7 @@
    include('session.php');
 ?>
 
+<!--uDine Menu Checkout-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,6 +16,7 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--uDine Logo-->
 <hr>
 <Center><h1><img src = "Images/uDine Logo.jpg" alt = "logo" /></h1></Center>
 <hr>
@@ -28,20 +30,19 @@
 
 
 			
-			<!--Menu -->
+			<!--Checkout heading-->
 			<h1 style="font-family:verdana;">Checkout</h1>
 	<div id="CheckoutDisplay">
 	
 	</div>
 	
+	<!--Place Order button-->
 	<br/>
 	<button class = "MenuButtons" id = "ConfirmOrderButton" type="button" onClick="CheckoutButton()">Place Order</button>
 
-
+	<!--Call to DisplayCheckoutFunction()-->
 	<script type="text/javascript">
-	
-	DisplayCheckout();
-	
+		DisplayCheckout();
 	</script>
 			
 			

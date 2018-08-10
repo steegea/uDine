@@ -1,6 +1,7 @@
 <?php
-   //include('config.php');
-   error_reporting(0); //gives a session start error when navigating multiple pages
+   //PHP script that initiates log-in sessions
+   
+   error_reporting(0); 
    
    session_start();
    

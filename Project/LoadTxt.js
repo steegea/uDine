@@ -1,4 +1,4 @@
-
+//Display menu
 function readText(file1,file2)
 {
     var rawFile1 = new XMLHttpRequest();
@@ -19,7 +19,7 @@ function readText(file1,file2)
 					var textByLine1 = allText1.split("\n");
 					var textByLine2 = allText2.split("\n");
 						
-					//Defult Breakfast
+					//Default Breakfast
 					var Write = document.getElementById('Breakfast');
 					
 					//Count the Times
@@ -27,14 +27,15 @@ function readText(file1,file2)
 					var TCount2 = 0
 					
 					var j = 0;
-					
 					for(var i=0;i<textByLine1.length;i++)
 					{
+						//Seperating the times
 						if(textByLine1[i] > "~T~")
 						{
 							TCount1 ++;
 							i++;
 						}
+						//Change the time
 						if(textByLine1[i] < "~T~")
 						{
 							if(TCount1 == 1)
@@ -47,9 +48,10 @@ function readText(file1,file2)
 							}
 							Write.innerHTML +=  "<h2>"+"&emsp;" + textByLine1[i] +"</h2>";
 						}
-						
+						//Changing the category
 						for(j;j<textByLine2.length;j++)
 						{
+							//Changes time and category
 							if(textByLine2[j] > "~C~"||textByLine2[j] > "~T~")
 							{
 								if(textByLine2[j] > "~T~")
@@ -64,6 +66,7 @@ function readText(file1,file2)
 									break;
 								}
 							}
+							//Changing the time
 							if(textByLine2[j] < "~C~"&&textByLine2[j] < "~T~")
 							{
 
@@ -78,6 +81,7 @@ function readText(file1,file2)
 								//So last check box does not load in			> = equals  < = notequal
 								if(textByLine2[j] >"")
 								{
+									//Print Checkboxs and items to the website in order
 									Write.innerHTML +=  '<input type="checkbox" name="checkboxall" value="'+textByLine2[j]+'">'+'&emsp;'+ textByLine2[j] +'<br>';
 								}
 							}
@@ -98,7 +102,7 @@ function doSubmit()
 	
 	var checkboxes = document.getElementsByName(chkboxName);
 	var checkboxesChecked = [];
-	// loop over them all
+	// loop over all menu items
 	for (var i=0; i<checkboxes.length; i++) 
 	{
 		// And stick the checked ones onto an array...
@@ -112,7 +116,7 @@ function doSubmit()
 	{
 		DisplayCart(checkboxesChecked);
 	}
-	
+	//If nothing is selected
 	else{
 		alert("You need to select at least 1 item!");
 	}
@@ -120,16 +124,21 @@ function doSubmit()
 
 function validateOrder()
 {
+	//Making sure everything is disabled if nothing is selected
 	$(document).ready(function()
 	{
 		$('#submitB').prop("disabled", true);
-		$('input:checkbox').click(function() {
-		 if ($(this).is(':checked')) {
-		 $('#submitB').prop("disabled", false);
-		 } else {
-		 if ($('.checkboxes').filter(':checked').length < 1){
-		 $('#submitB').attr('disabled',true);
-		 }
+		$('input:checkbox').click(function() 
+		{
+		 if ($(this).is(':checked')) 
+		 {
+			$('#submitB').prop("disabled", false);
+		 } 
+		 else 
+		 {
+			 if ($('.checkboxes').filter(':checked').length < 1){
+			 $('#submitB').attr('disabled',true);
+			 }
 		 }
 		});
 	});
@@ -137,6 +146,7 @@ function validateOrder()
 	
 function doClear()
 {
+	//Clears out everything including the cart
 	chkboxName = "checkboxall"
 	var checkboxes = document.getElementsByName(chkboxName);
 	//Clears checks
@@ -196,6 +206,7 @@ function DisplayCheckout()
 
 function CheckoutButton()
 {
+	//Get the time and display that time plus the added time below
 	var addedTime = 20;
 	var d = new Date();
 	var apm = "AM";
@@ -204,6 +215,22 @@ function CheckoutButton()
 	var m = d.getMinutes();
 	m = m + addedTime;
 	if(m > 59){m = m-60; h++; if(m<10){var u = "0"+ m; m = u;}}
+	//Print to screen the message
 	alert("Your order has been placed and will be ready for pickup at "+h+":"+m+" "+apm+".");
 	window.location.href='uDine Menu.html'
 }
+
+window.onload = function()
+{
+	//Get the time and scroll down to the meal that is being served right now
+	var d = new Date();
+	var apm = "AM";
+	if (d.getHours() >12){var h = d.getHours()-12; apm = "PM"; } 
+	else{var h = d.getHours();}
+	var m = d.getMinutes();
+  
+	//Scroll to
+	if(h<=10&&apm=="AM"){B.scrollIntoView(true);}
+	if(((h==11||h==12)&&apm=="AM")||((h<=3)&&apm=="PM")){L.scrollIntoView(true);}
+	if(h>3 && apm=="PM"){D.scrollIntoView(true);}
+}	

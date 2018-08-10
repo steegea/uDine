@@ -1,6 +1,8 @@
 <?php
    include('session.php');
 ?>
+<!--uDine Menu Checkout PHP File-->
+<!--Pseudocode: Refer to uDine Menu Checkout.html-->
 
 <!DOCTYPE html>
 <html>
