@@ -3,7 +3,7 @@
 uDine is an online food ordering web application designed for colleges and universities. It is geared towards college students, faculty, and staff.
 
 ## Screenshots
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![uDine Logo](Projects/Images/uDine LogoWhite.jpg)
 
 ## Features
 
