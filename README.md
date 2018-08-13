@@ -41,7 +41,7 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 * [JSON Simple](https://github.com/fangyidong/json-simple) - Java JSON Library Parser
 
 ## Usage
-### Placing a Sample Order
+### Placing an Order
 ![MenuOrder1](Project/Images/MenuOrdering1.JPG)
 <b>Figure 1</b>: Selecting items from the cart.
 
