@@ -38,7 +38,7 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 * [mySQL](https://www.mysql.com/) - Database
 
 * [Dine on Campus](https://www.dineoncampus.com/) - Menu
-* [Example API JSON](https://api.dineoncampus.com/v1/sites/cof/info.json/) - Colleges of the Fenway API
+* [Example JSON API](https://api.dineoncampus.com/v1/sites/cof/info.json/) - Colleges of the Fenway API
 * [JSON Simple](https://github.com/fangyidong/json-simple) - Java JSON Library Parser
 
 ### Change the School
