@@ -34,6 +34,7 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 HTML, CSS, and JavaScript.
 * [BootStrap](https://getbootstrap.com/) - Front-end
 * [Dine on Campus](https://www.dineoncampus.com/) - Menu Json 
+* [Example API Json](https://api.dineoncampus.com/v1/sites/cof/info.json/) - For Colleges of the Fenway
 * [mySQL](https://www.mysql.com/) - Database
 * [Json Simple](https://github.com/fangyidong/json-simple) - Java Json Library Parser
 
