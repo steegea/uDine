@@ -2,7 +2,7 @@
 
 uDine is an online food ordering web application designed for colleges and universities. It is geared towards college students, faculty, and staff.
 
-![uDine Logo](uDineLogoWhite.JPG)
+![uDine Logo](Project/Images/uDineLogoWhite.JPG)
 
 ## Features
 
