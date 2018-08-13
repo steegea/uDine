@@ -31,7 +31,7 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 
 ## Built With
 
-HTML, CSS, and JavaScript
+* HTML, CSS, and JavaScript
 * [JQuery](https://jquery.com//) - Front-end
 * [BootStrap](https://getbootstrap.com/) - Front-end
 * [PHP](https://secure.php.net/) - Back-end
@@ -41,7 +41,7 @@ HTML, CSS, and JavaScript
 * [Example API Json](https://api.dineoncampus.com/v1/sites/cof/info.json/) - For Colleges of the Fenway
 * [Json Simple](https://github.com/fangyidong/json-simple) - Java Json Library Parser
 
-### Change the School
+### Change the School (API Reference)
 
 Go to “uDine/Project/Json/src/Json.java”
 
