@@ -23,9 +23,9 @@ Go to [www.udine.online](http://www.udine.online). If that does not work, visit 
 
 In the browser, type the following: “localhost:80” where 80 is the default port number used by the Apache server. You may need to change this depending on your port & firewall settings. To access the database you need to enter “localhost:80/phpmyadmin” and substitute the 80 if it does not load.To load the website, you need to type “localhost:80/uDine”1 where you will find all of the project files and can navigate between them. 
 
-This assumes you create a folder called “udine” in XAMPP’s htdocs folder in the C drive. When typing the folder name in the localhost address, it is case insensitive.
+* This assumes you create a folder called “udine” in XAMPP’s htdocs folder in the C drive. When typing the folder name in the localhost address, it is case insensitive.
 
-Make sure you create the database table by importing the udine_create.sql file.
+* Make sure you create the database table by importing the udine_create.sql file.
 
 ## Built With
 
