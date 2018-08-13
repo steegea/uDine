@@ -9,7 +9,7 @@ uDine is an online food ordering web application designed for colleges and unive
 
 * Place orders
 * Over 150+ school options
-* Account creation
+* User accounts
 * Cross-platform
 
 ## Getting Started
