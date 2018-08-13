@@ -31,11 +31,14 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 
 ## Built With
 
-HTML, CSS, and JavaScript.
+HTML, CSS, and JavaScript
+* [JQuery](https://jquery.com//) - Front-end
 * [BootStrap](https://getbootstrap.com/) - Front-end
+* [PHP](https://secure.php.net/) - Back-end
+* [mySQL](https://www.mysql.com/) - Database
+
 * [Dine on Campus](https://www.dineoncampus.com/) - Menu Json 
 * [Example API Json](https://api.dineoncampus.com/v1/sites/cof/info.json/) - For Colleges of the Fenway
-* [mySQL](https://www.mysql.com/) - Database
 * [Json Simple](https://github.com/fangyidong/json-simple) - Java Json Library Parser
 
 ### Change the School
