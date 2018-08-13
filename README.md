@@ -42,10 +42,17 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 
 ## Usage
 ### Placing a Sample Order
-![MenuOrder1](MenuOrdering1.JPG)
+![MenuOrder1](Project/Images/MenuOrdering1.JPG)
 <b>Figure 1</b>: Selecting items from the cart.
-![MenuOrder2](MenuOrdering2.JPG)
+
+![MenuOrder2](Project/Images/MenuOrdering2.JPG)
 <b>Figure 2</b>: Viewing the cart.
+
+![MenuOrder3](Project/Images/MenuOrdering3.JPG)
+<b>Figure 3</b>: Viewing the cart.
+
+![MenuOrder4](Project/Images/MenuOrdering4.JPG)
+<b>Figure 4</b>: Viewing the cart.
 
 ### Change the School
 
