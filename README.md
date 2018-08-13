@@ -32,8 +32,8 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 ## Built With
 
 * [HTML](https://html.com/), [CSS](https://www.w3.org/Style/CSS/Overview.en.html), and [JavaScript](https://www.javascript.com/)
-* [JQuery](https://jquery.com//) - Front-end
-* [BootStrap](https://getbootstrap.com/) - Front-end
+* [jQuery](https://jquery.com//) - Front-end
+* [Bootstrap](https://getbootstrap.com/) - Front-end
 * [PHP](https://secure.php.net/) - Back-end
 * [mySQL](https://www.mysql.com/) - Database
 
