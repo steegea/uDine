@@ -40,11 +40,16 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 * [Example JSON API](https://api.dineoncampus.com/v1/sites/cof/info.json/) - Colleges of the Fenway API
 * [JSON Simple](https://github.com/fangyidong/json-simple) - Java JSON Library Parser
 
+## Usage
 ### Change the School
 
 Go to “uDine/Project/Json/src/Json.java”
 
 On lines 148 to 158, you can find API links to various schools that have a partnership with Dine On Campus. On line 162, you can change the school name to one that is listed in the Java file. Once you run the program, the menu will update to the school of your choice. One thing to keep in mind is most schools are closed over the summer which means that the menu will not have any items for sale.
+
+### Placing a Sample Order
+![MenuOrder1](MenuOrdering1.JPG)
+![MenuOrder2](MenuOrdering2.JPG)
 
 
 ## Authors
