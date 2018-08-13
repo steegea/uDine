@@ -1,1 +1,1 @@
-# uDine (Images/uDine LogoWhite.jpg)
+# uDine (Project/Images/uDine LogoWhite.JPG)
