@@ -16,7 +16,7 @@ uDine is an online food ordering web application designed for colleges and unive
 
 ### Users
 
-Go to [www.udine.online](http://www.udine.online). If that does not work, visit the [Direct Link](http://udine.online.s3-website.us-east-2.amazonaws.com/)
+Go to [www.udine.online](http://www.udine.online). If that does not work, visit the [direct link](http://udine.online.s3-website.us-east-2.amazonaws.com/)
 
 
 ### Developers
@@ -31,17 +31,17 @@ In the browser, type the following: “localhost:80” where 80 is the default p
 
 ## Built With
 
-* HTML, CSS, and JavaScript
+* [HTML](https://html.com/), [CSS](https://www.w3.org/Style/CSS/Overview.en.html), and [JavaScript](https://www.javascript.com/)
 * [JQuery](https://jquery.com//) - Front-end
 * [BootStrap](https://getbootstrap.com/) - Front-end
 * [PHP](https://secure.php.net/) - Back-end
 * [mySQL](https://www.mysql.com/) - Database
 
-* [Dine on Campus](https://www.dineoncampus.com/) - Menu Json 
-* [Example API Json](https://api.dineoncampus.com/v1/sites/cof/info.json/) - For Colleges of the Fenway
-* [Json Simple](https://github.com/fangyidong/json-simple) - Java Json Library Parser
+* [Dine on Campus](https://www.dineoncampus.com/) - Menu
+* [Example API JSON](https://api.dineoncampus.com/v1/sites/cof/info.json/) - Colleges of the Fenway API
+* [JSON Simple](https://github.com/fangyidong/json-simple) - Java JSON Library Parser
 
-### Change the School (API Reference)
+### Change the School
 
 Go to “uDine/Project/Json/src/Json.java”
 
@@ -50,5 +50,5 @@ On lines 148 to 158, you can find API links to various schools that have a partn
 
 ## Authors
 
-Matthew Russell, 
-Alex Steege
+Alex Steege,
+Matthew Russell
