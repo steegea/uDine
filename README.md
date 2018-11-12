@@ -13,6 +13,7 @@ uDine is an online food ordering web application designed for colleges and unive
 
 ## Getting Started
 
+User data is not saved on a centralized server (see the Developers section below).
 ### Users
 
 Go to [www.udine.online](http://www.udine.online). If that does not work, visit the [direct link](http://udine.online.s3-website.us-east-2.amazonaws.com/)
