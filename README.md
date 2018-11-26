@@ -13,7 +13,7 @@ uDine is an online food ordering web application designed for colleges and unive
 
 ## Getting Started
 
-User data is **not** saved on a centralized server and it is **unique** to your local computer (see the Developers section below).
+User data is not saved on a centralized server and it is **unique** to your local computer (see the Developers section below).
 
 ### Users
 
@@ -22,9 +22,9 @@ Go to [www.udine.online](http://www.udine.online). If that does not work, visit 
 
 ### Developers
 
-* [XAMPP](https://www.apachefriends.org/index.html) - Used to run the server locally.  Once installed run Apache and mySQL.
+* [XAMPP](https://www.apachefriends.org/index.html), [PHPMyAdmin](https://www.phpmyadmin.net/) - Used to run the server locally.  Once installed run Apache and mySQL.
 
-In the browser, type the following: “localhost:80” where 80 is the default port number used by the Apache server. You may need to change this depending on your port & firewall settings. To access the database you need to enter “localhost:80/phpmyadmin” and substitute the 80 if it does not load. To load the website, you need to type “localhost:80/uDine”<sup>1</sup> where you will find all of the project files and can navigate between them. 
+In the browser, type the following: “localhost:80” where 80 is the default port number used by the Apache server. You may need to change this depending on your port & firewall settings. To access the database, go to **PHPMyAdmin** by entering “localhost:80/phpmyadmin” in the address bar and substitute the 80 if it does not load. To load the website, you need to type “localhost:80/uDine”<sup>1</sup> where you will find all of the project files and can navigate between them. 
 
 1. This assumes you create a folder called “udine” in XAMPP’s htdocs folder in the C drive. When typing the folder name in the localhost address, it is case insensitive.
 
