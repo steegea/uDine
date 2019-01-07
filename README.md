@@ -13,14 +13,14 @@ uDine is an online food ordering web application designed for colleges and unive
 
 ## Getting Started
 
-User data is not saved on a centralized server and it is **unique** to your local computer (see the Developers section below).
+User data is not saved on a centralized server and it is **unique** to your local computer (see the Server-Side section below).
 
-### Users
+### Users/Client-Side
 
 Go to [www.udine.online](http://www.udine.online). If that does not work, visit the [direct link](http://udine.online.s3-website.us-east-2.amazonaws.com/)
 
 
-### Developers
+### Server-Side
 
 * [XAMPP](https://www.apachefriends.org/index.html), [PHPMyAdmin](https://www.phpmyadmin.net/) - Used to run the server locally.  Once installed run Apache and mySQL.
 
