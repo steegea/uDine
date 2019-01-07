@@ -13,7 +13,7 @@ uDine is an online food ordering web application designed for colleges and unive
 
 ## Getting Started
 
-User data is not saved on a centralized server and it is **unique** to your local computer (see the Server-Side section below).
+User data is saved on a local server (see the Server-Side section below).
 
 ### Users/Client-Side
 
